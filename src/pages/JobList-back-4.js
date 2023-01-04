@@ -11,7 +11,7 @@ import {
   onSnapshot,
   endBefore,
 } from "firebase/firestore";
-import { Button, Space, Select, Row, Col } from "antd";
+import { Col, Row, Form, Pagination, Container } from "react-bootstrap";
 
 function JobList() {
   const [jobs, setJobs] = useState([]);
@@ -19,11 +19,11 @@ function JobList() {
   const [firstVisible, setFirstVisible] = useState(null);
   const [sortJobOption, setSortJobOption] = useState("asc");
 
-  const pageSize = 8;
+  const pageSize = 2;
   const jobsRef = collectionGroup(db, "jobs");
   const sortOption = [
-    { value: "asc", label: "asc" },
-    { value: "desc", label: "desc" },
+    { value: "asc", text: "asc" },
+    { value: "desc", text: "desc" },
   ];
 
   useEffect(() => {
@@ -51,8 +51,8 @@ function JobList() {
   }, []);
 
   // SORTING
-  const sortJobs = async (value) => {
-    setSortJobOption(value);
+  const sortJobs = async (event) => {
+    setSortJobOption(event.target.value);
     const q = query(
       jobsRef,
       orderBy("DatePosted", sortJobOption),
@@ -108,59 +108,68 @@ function JobList() {
   };
 
   return (
-    <>
+    <Container>
+      <Row className="mt-5">
+        {jobs.map((job) => {
+          return (
+            <Col key={job.id}>
+              <div className="content rounded shadow p-3">
+                <p>Job Title : {job.JobTitle}</p>
+                <p>Job Description : {job.JobDescription}</p>
+                <p>Company Name : {job.CompanyName}</p>
+                <p>Job Location: {job.JobLocation}</p>
+                <p>Salary : {job.SalaryMin + " - " + job.SalaryMax}</p>
+                <p>
+                  Date Posted : {job.DatePosted.toDate().toLocaleDateString()}
+                </p>
+              </div>
+            </Col>
+          );
+        })}
+      </Row>
       <Row>
         <Col>
-          {sortJobOption}
-          <Select
-            defaultValue={sortJobOption}
+          <Pagination className="float-end">
+            <Pagination.Item
+              className="shadow-none"
+              size="lg"
+              onClick={() => {
+                previousPage();
+              }}
+            >
+              Previous
+            </Pagination.Item>
+            <Pagination.Item
+              className="shadow-none"
+              size="lg"
+              onClick={() => {
+                nextPage();
+              }}
+            >
+              Next
+            </Pagination.Item>
+          </Pagination>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Form.Select
+            value={sortJobOption}
             onChange={(e) => {
               sortJobs(e);
             }}
-            style={{ width: 120 }}
-            options={sortOption}
-          />
+          >
+            {/* <Form.Select value={sortJobOption} onChange={sortJobs}> */}
+            {sortOption.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.text}
+              </option>
+            ))}
+          </Form.Select>
+          {sortJobOption}
         </Col>
       </Row>
-      <Space size={10} wrap="true" className="spaceWrap">
-        {jobs.map((job) => {
-          return (
-            <div className="jobBox" key={job.id}>
-              <p>Job Title : {job.JobTitle}</p>
-              <p>Job Description : {job.JobDescription}</p>
-              <p>Company Name : {job.CompanyName}</p>
-              <p>Job Location: {job.JobLocation}</p>
-              <p>Salary : {job.SalaryMin + " - " + job.SalaryMax}</p>
-              <p>
-                Date Posted : {job.DatePosted.toDate().toLocaleDateString()}
-              </p>
-            </div>
-          );
-        })}
-      </Space>
-      <Row className="pagination">
-        <Col span={12}>
-          <Button
-            type="primary"
-            onClick={() => {
-              previousPage();
-            }}
-          >
-            Previous
-          </Button>
-        </Col>
-        <Col span={12} style={{ textAlign: "right" }}>
-          <Button
-            type="primary"
-            onClick={() => {
-              nextPage();
-            }}
-          >
-            Next
-          </Button>
-        </Col>
-      </Row>
-    </>
+    </Container>
   );
 }
 

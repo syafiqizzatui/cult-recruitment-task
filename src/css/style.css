@@ -27,9 +27,10 @@
   font-style: normal;
 }
 
+/* CONTENT RESET */
 body,
 html {
-  background-color: #ffffff !important;
+  background-color: #d4bdae !important;
   font-size: 14px !important;
   line-height: 1.75 !important;
   font-style: normal !important;
@@ -38,409 +39,175 @@ html {
   font-family: "din_next_w1gregular" !important;
   color: #666666;
   position: relative;
-}
-
-.dashboard-bg {
-  background-color: #d4bdae;
-  min-height: 100vh;
+  margin: 0;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.dashboard-bg .content {
-  min-width: 420px;
-  padding: 50px 15px;
-  background-color: #ffffff;
-}
-.dashboard-bg .content h1 {
-  font-weight: 300;
-  line-height: 1;
-  margin-bottom: 15px;
-}
-@media only screen and (max-width: 767px) {
-  .dashboard-bg .content h1 {
-    font-size: 30px;
-  }
-}
-/*Login & Resister BG*/
-.login-register-bg {
-  color: #ffffff;
-  min-height: 100vh;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.login-register-bg.login {
-  background-color: #0093e9;
-  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
-}
-.login-register-bg.register {
-  background-color: #d9afd9;
-  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
-}
-.login-register-bg .content {
-  display: none;
-  max-width: 420px;
-  padding: 100px 30px;
 }
 
-.login-register-bg .content h1 {
-  font-weight: 300;
-  line-height: 1;
-  margin-bottom: 15px;
-  color: #ffffff;
+.ant-layout {
+  background-color: #d4bdae !important;
 }
-
-.login-register-bg .content p {
-  margin-bottom: 0;
-  color: #ffffff;
+.ant-input-affix-wrapper {
+  border-radius: 30px !important;
 }
-
-@media only screen and (min-width: 768px) and (max-width: 991px),
-  only screen and (max-width: 767px) {
-  .login-register-bg {
-    min-height: auto;
-  }
-  .login-register-bg .content {
-    display: block;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .login-register-bg .content {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  .login-register-bg .content h1 {
-    font-size: 30px;
-  }
-}
-
-/*Login & Resister Form Wrapper*/
-.login-register-form-wrap {
-  max-width: 420px;
-  padding: 50px 15px;
-}
-
-.login-register-form-wrap .content h1 {
-  font-weight: 300;
-  line-height: 1;
-  margin-bottom: 15px;
-}
-
-.login-register-form-wrap .content p {
-  margin-bottom: 30px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px),
-  only screen and (max-width: 767px) {
-  .login-register-form-wrap .content {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .login-register-form-wrap .content h1 {
-    font-size: 30px;
-  }
-}
-
-/*Login & Resister Form*/
-.login-register-form {
-  max-width: 370px;
-}
-
-.login-register-form a {
-  color: #151540;
-}
-
-.login-register-form a:hover {
-  text-decoration: underline;
-}
-
-/*Form Coltrol*/
-.form-control {
+.container {
+  max-width: 1320px;
+  margin: auto;
   width: 100%;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 6px;
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  padding: 10px 20px;
-  color: #666666;
-  height: auto;
+}
+@media (max-width: 1199.98px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (max-width: 991.98px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (max-width: 767.98px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (max-width: 575.98px) {
+  .container {
+    max-width: 100%;
+  }
+}
+.ant-layout-header {
+  background: #ffffff !important;
+  padding-inline: 0;
 }
 
-.form-control:focus {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-color: #151540;
+.main {
+  min-height: calc(100vh - 66px - 64px);
+}
+.content-main {
+  padding: 0 0 0 10px;
 }
 
-.form-control[readonly] {
-  background-color: transparent;
-  border-color: #dddddd;
+/* MENU */
+.ant-layout .ant-layout-header {
+  padding-inline: 0 !important;
+  background: transparent !important;
+}
+.menuCon .wrapMenu > .ant-menu {
+  border: 0 !important;
+  height: 45px;
+}
+.menuCon .ant-menu-item,
+.menuCon .ant-menu-submenu-title {
+  line-height: 45px !important;
+}
+.menuBar {
+  overflow: hidden;
 }
 
-.form-control[disabled] {
-  background-color: transparent;
-  border-color: #efefef;
-  color: #cccccc;
+.logo {
+  float: left;
+  text-align: center;
+  margin-right: 10px;
+}
+.menuCon {
+  display: flex;
+  justify-content: space-between;
+  background: #fafafa;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+.leftMenu {
+  flex: auto;
+}
+.rightMenu {
+  text-align: right;
+  margin-left: auto !important;
+  min-width: 110px;
+}
+.barsMenu {
+  float: right;
+  height: 20px;
+  padding: 20px;
+  display: none;
+  background: none;
+  background: #ccc;
 }
 
-.form-control[disabled]::-webkit-input-placeholder {
-  color: #cccccc;
+.ant-drawer-body .ant-menu-horizontal {
+  border-bottom: none;
 }
 
-.form-control[disabled]::-moz-placeholder {
-  color: #cccccc;
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item:hover {
+  border-bottom-color: transparent;
 }
 
-.form-control[disabled]:-ms-input-placeholder {
-  color: #cccccc;
+.ant-menu-light {
+  background-color: transparent !important;
 }
 
-.form-control.primary {
-  border-color: #151540;
+@media (max-width: 768px) {
+  .barsMenu {
+    display: inline-block;
+  }
+
+  .leftMenu,
+  .rightMenu {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .logo a {
+    margin-left: -20px;
+  }
+
+  .logo a {
+    padding: 10px 20px;
+  }
+}
+/* SIDER */
+.ant-layout .ant-layout-sider {
+  background: #fafafa;
+  border-radius: 8px;
 }
 
-.form-control.secondary {
-  border-color: #fb7da4;
+/* FOOTER */
+.ant-layout .ant-layout-footer {
+  padding: 0 !important;
+  background: transparent !important;
+}
+.ant-layout .ant-layout-footer .container .ant-row {
+  background: #fafafa;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+.footerRight > .ant-menu {
+  justify-content: end;
 }
 
-.form-control.success,
-#toast-container .toast .toast-message input.success {
-  border-color: #29db2d;
+/* CONTENT */
+.spaceWrap {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: start;
 }
-
-.form-control.danger,
-#toast-container .toast .toast-message input.danger {
-  border-color: #fd427c;
+.spaceWrap .ant-space-item {
+  display: flex;
+  height: 100%;
 }
-
-.form-control.warning {
-  border-color: #ff9666;
-}
-
-.form-control.info {
-  border-color: #17a2b8;
-}
-
-.form-control.form-control-sm {
-  padding: 5px 15px;
-  font-size: 12px;
-}
-
-.form-control.form-control-sm.nice-select {
-  padding-right: 35px;
-}
-
-.form-control.form-control-lg {
-  padding: 15px 25px;
-  font-size: 16px;
-}
-
-.form-control.form-control-lg.nice-select {
-  padding-right: 35px;
-}
-
-/*Textarea*/
-textarea.form-control {
-  height: 120px;
-}
-
-select.form-control:not([multiple]).form-control-sm {
-  padding: 5px 11px;
-  font-size: 12px;
-  padding-right: 35px;
-}
-
-select.form-control:not([multiple]).form-control-lg {
-  padding: 15px 21px;
-  font-size: 16px;
-  padding-right: 35px;
-}
-
-/*Input Type Checkbox & Radio*/
-input[type="checkbox"],
-input[type="radio"] {
-  margin-right: 5px;
-  position: relative;
-  top: 1px;
-}
-
-/*-- Button Colors --*/
-.btn {
-  display: inline-block;
-  color: #666666;
-  border-radius: 6px;
-  text-transform: capitalize;
-  font-size: 15px;
-  line-height: 24px;
-  padding: 7px 20px;
+.spaceWrap .ant-space-item .jobBox {
   border-width: 1px;
+  border-color: rgba(155, 121, 41, 0.75);
   border-style: solid;
-}
-.btn-primary {
-  background-color: #151540;
-  border-color: #151540;
-  color: #ffffff;
-}
-
-.btn-primary.btn-outline {
-  background-color: transparent;
-  color: #151540;
+  background-color: #e2d4ca;
+  border-radius: 8px;
+  padding: 10px;
+  height: 100%;
+  align-items: stretch;
 }
 
-.btn-primary.btn-outline:hover {
-  background-color: #151540;
-  border-color: #151540;
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  background-color: #297cf9;
-  border-color: #297cf9;
-  color: #ffffff;
-}
-
-.btn-secondary {
-  background-color: #fb7da4;
-  border-color: #fb7da4;
-  color: #ffffff;
-}
-
-.btn-secondary.btn-outline {
-  background-color: transparent;
-  color: #fb7da4;
-}
-
-.btn-secondary.btn-outline:hover {
-  background-color: #fb7da4;
-  border-color: #fb7da4;
-  color: #ffffff;
-}
-
-.btn-secondary.btn-danger:hover {
-  background-color: #fa6493;
-  border-color: #fa6493;
-  color: #ffffff;
-}
-
-.btn-success {
-  background-color: #29db2d;
-  border-color: #29db2d;
-  color: #ffffff;
-}
-
-.btn-success.btn-outline {
-  background-color: transparent;
-  color: #29db2d;
-}
-
-.btn-success.btn-outline:hover {
-  background-color: #29db2d;
-  border-color: #29db2d;
-  color: #ffffff;
-}
-
-.btn-success:hover {
-  background-color: #22c926;
-  border-color: #22c926;
-  color: #ffffff;
-}
-
-.btn-danger {
-  background-color: #fd427c;
-  border-color: #fd427c;
-  color: #ffffff;
-}
-
-.btn-danger.btn-outline {
-  background-color: transparent;
-  color: #fd427c;
-}
-
-.btn-danger.btn-outline:hover {
-  background-color: #fd427c;
-  border-color: #fd427c;
-  color: #ffffff;
-}
-
-.btn-danger:hover {
-  background-color: #fd296b;
-  border-color: #fd296b;
-  color: #ffffff;
-}
-
-.btn-warning {
-  background-color: #ff9666;
-  border-color: #ff9666;
-  color: #ffffff;
-}
-
-.btn-warning.btn-outline {
-  background-color: transparent;
-  color: #ff9666;
-}
-
-.btn-warning.btn-outline:hover {
-  background-color: #ff9666;
-  border-color: #ff9666;
-  color: #ffffff;
-}
-
-.btn-warning:hover {
-  background-color: #ff854d;
-  border-color: #ff854d;
-  color: #ffffff;
-}
-
-.btn-info {
-  background-color: #17a2b8;
-  border-color: #17a2b8;
-  color: #ffffff;
-}
-
-.btn-info.btn-outline {
-  background-color: transparent;
-  color: #17a2b8;
-}
-
-.btn-info.btn-outline:hover {
-  background-color: #17a2b8;
-  border-color: #17a2b8;
-  color: #ffffff;
-}
-
-.btn-info:hover {
-  background-color: #148ea1;
-  border-color: #148ea1;
-  color: #ffffff;
-}
-
-.btn-dark {
-  background-color: #343434;
-  border-color: #343434;
-  color: #ffffff;
-}
-
-.btn-dark.btn-outline {
-  background-color: transparent;
-  color: #343434;
-}
-
-.btn-dark.btn-outline:hover {
-  background-color: #343434;
-  border-color: #343434;
-  color: #ffffff;
-}
-
-.btn-dark:hover {
-  background-color: #414141;
-  border-color: #414141;
-  color: #ffffff;
+.pagination {
+  margin-top: 10px;
 }

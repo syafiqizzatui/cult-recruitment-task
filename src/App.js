@@ -6,29 +6,24 @@ import JobList from "./pages/JobList";
 import Navbar from "./components/Navbar";
 import FooterBar from "./components/Footer";
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Footer } = Layout;
 
 function App() {
   return (
     <>
       <Layout>
         <Router>
-          <Header>
+          <Header className="mb-15">
             <div className="container">
               <Navbar />
             </div>
           </Header>
           <div className="container">
-            <Layout className="main">
-              <Sider width={250}></Sider>
-              <Content className="content-main">
-                <Routes>
-                  <Route exact path="/">
-                    <Route path="/" exact element={<JobList />} />
-                  </Route>
-                </Routes>
-              </Content>
-            </Layout>
+            <Routes>
+              <Route exact path="/">
+                <Route path="/" exact element={<JobList />} />
+              </Route>
+            </Routes>
           </div>
           <Footer>
             <FooterBar />

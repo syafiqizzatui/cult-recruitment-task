@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { UserOutlined, EditOutlined, LogoutOutlined } from "@ant-design/icons";
+import {
+  UserOutlined,
+  EditOutlined,
+  LogoutOutlined,
+  MenuOutlined,
+} from "@ant-design/icons";
 import { Drawer, Button, Menu, Avatar } from "antd";
 
 function Navbar() {
@@ -51,23 +56,23 @@ function Navbar() {
   };
 
   return (
-    <nav className="menuBar">
+    <nav className="menubar">
       <div className="logo">
-        <img width={45} src="/images/logo.png" />
+        <img width={48} src="/images/logo.png" />
       </div>
-      <div className="menuCon">
-        <div className="leftMenu wrapMenu">
+      <div className="menu-con">
+        <div className="left-menu wrap-menu">
           <Menu mode="horizontal" items={leftMenuItem} />
         </div>
-        <div className="rightMenu wrapMenu">
+        <div className="right-menu wrap-menu">
           <Menu
             mode="horizontal"
             items={rightMenuItem}
             style={{ flexDirection: "end" }}
           />
         </div>
-        <Button className="barsMenu" type="primary" onClick={showDrawer}>
-          <span className="barsBtn"></span>
+        <Button className="mobile-menu-drawer" onClick={showDrawer}>
+          <MenuOutlined />
         </Button>
         <Drawer placement="right" onClose={onClose} open={open}>
           <Menu mode="inline" items={leftMenuItem} />

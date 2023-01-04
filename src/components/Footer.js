@@ -48,10 +48,10 @@ function Footer() {
   return (
     <div className="container">
       <Row>
-        <Col span={12}>
+        <Col span={18}>
           <Menu mode="horizontal" items={footerLeftMenuItem} />
         </Col>
-        <Col span={12} className="footerRight">
+        <Col span={6} className="footer-right">
           <Menu mode="horizontal" items={footerRightMenuItem} />
         </Col>
       </Row>
